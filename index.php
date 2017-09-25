@@ -95,11 +95,13 @@ $data_product_coffee_add = [
     'stock_quantity'    => 400,
     'in_stock'          => 1,
     'backorders'        => 'no',
+
     'categories' => [
         [
-            'id' => 18 //product category id
+            'id' => 18 //coffe category id
         ]
     ],
+
     'meta_data' => [
         //Product Type
         [
@@ -169,33 +171,44 @@ $data_product_accessories_add = [
     'stock_quantity'    => 400,
     'in_stock'          => 1,
     'backorders'        => 'no',
+
     'categories' => [
         [
-            'id' => 20 //product category id
+            'id' => 20 //accessory category id
         ]
     ],
+
     'meta_data' => [
+        //Product Type
         [
             'key'   => 'product_type',
             'value' => 'Accessory'
 
         ],
+        //Description
         [
             'key'   => 'description',
             'value' => 'Sample product description'
         ],
+        //Accessory Category
         [
             'key'   => 'accessory_category',
             'value' => 'Cups & Saucers'
         ],
+        //Accessory Collection
         [
             'key'   => 'collection',
             'value' => 'Pure Collection'
         ],
-        // [
-        //     'key'   => 'recommended_products',
-        //     'value' => ["479", "514", "519", "8843"]
-        // ]
+        //Recommended Products
+        [
+            'key'   => 'recommended_products',
+            'value' => ["479", "514", "519", "8843"]
+        ],
+        [
+            'key'   => '_recommended_products',
+            'value' => 'field_58ff545df2a9b' //static
+        ]
 
     ]
 ];
@@ -204,11 +217,13 @@ $data_product_accessories_add = [
 $data_product_machine_add = [
     'sku'               => 'SAMPLEMACHINESKU',
     'type'              => 'variable',
+
     'categories' => [
         [
-            'id' => 19 //product category id
+            'id' => 19 //Machine category id
         ]
     ],
+
     'attributes'    => [
         [
             'name'      => 'Color',
@@ -222,27 +237,36 @@ $data_product_machine_add = [
     'regular_price'     => '6500.99',
     
     'meta_data' => [
+        //Product type
         [
             'key'   => 'product_type',
             'value' => 'Machine'
 
         ],
+        //Description
         [
             'key'   => 'description',
             'value' => 'Sample product description'
         ],
+        //Short Description
         [
             'key'   => 'short_description',
             'value' => 'Sample product short description'
         ],
+        //Specification
         [
             'key'   => 'specification',
             'value' => 'Weight: 2.8 Kilogram .....'
         ],
-        // [
-        //     'key'   => 'recommended_products',
-        //     'value' => ["685", "430", "10613", "11073"]
-        // ]
+        //Recommmended Product
+        [
+            'key'   => 'recommended_products',
+            'value' => ["685", "430", "10613", "11073"]
+        ],
+        [
+            'key'   => '_recommended_products',
+            'value' => 'field_58ff545df2a9b' //static
+        ]
 
     ]
 ];
@@ -264,8 +288,10 @@ $data_product_machine_variable_add = [
     ],
 ];
 
+//Simple Product (just change data parameter)
+echo "<pre>"; print_r($woocommerce->post('products', $data_product_accessories_add));
 
-echo "<pre>"; print_r($woocommerce->post('products', $data_product_coffee_add));
+
 // echo "<pre>"; print_r($woocommerce->post('products/12112/variations', $data_product_machine_variable_add));
 
 // echo "<pre>"; print_r($woocommerce->put('customers/8108', $data_customer_update));
