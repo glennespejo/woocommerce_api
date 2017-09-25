@@ -215,7 +215,7 @@ $data_product_accessories_add = [
 
 //machine main product
 $data_product_machine_add = [
-    'sku'               => 'SAMPLEMACHINESKU',
+    'sku'               => 'SAMPLEMACHINESKU1',
     'type'              => 'variable',
 
     'categories' => [
@@ -233,7 +233,7 @@ $data_product_machine_add = [
 
         ]
     ],
-    'name'              => 'Sample Machine Product',
+    'name'              => 'Sample Machine Product 1',
     'regular_price'     => '6500.99',
     
     'meta_data' => [
@@ -273,30 +273,31 @@ $data_product_machine_add = [
 
 //machine main product variations
 $data_product_machine_variable_add = [
-    'regular_price'     => '21.99',
-    'sku'               => 'SAMPLEITNESP033',
+    'regular_price'     => '22.99',
+    'sku'               => 'SAMPLEITNESP0333B',
     'manage_stock'      => 1,
     'stock_quantity'    => 10,
     'in_stock'          => 1,
     'backorders'        => 'no',
+
     'attributes'    => [
         [
             'name'      => 'Color',
-            'option'    => "Red"
+            'option'    => 'Red'
 
         ]
     ],
 ];
 
-//Simple Product (just change data parameter)
-echo "<pre>"; print_r($woocommerce->post('products', $data_product_accessories_add));
+/*Simple Product (just change data parameter)*/
+// echo "<pre>"; print_r($woocommerce->get('products/685')); //GET ITEM
+// echo "<pre>"; print_r($woocommerce->post('products', $data_product_machine_add)); //CREATE PRODUCT
+// echo "<pre>"; print_r($woocommerce->post('products/12089/variations', $data_product_machine_variable_add));  //CREATE PRODUCT VARIATION
 
+/*Customer*/
+// echo "<pre>"; print_r($woocommerce->put('customers/8108', $data_customer_update)); //UPDATE CUSTOMER 
+// echo "<pre>"; print_r($woocommerce->post('customers', $data_customer_add));  //ADD CUSTOMER
 
-// echo "<pre>"; print_r($woocommerce->post('products/12112/variations', $data_product_machine_variable_add));
-
-// echo "<pre>"; print_r($woocommerce->put('customers/8108', $data_customer_update));
-// echo "<pre>"; print_r($woocommerce->post('customers', $data_customer_add));
-// echo "<pre>"; print_r($woocommerce->get('products/685'));
 
 
 
